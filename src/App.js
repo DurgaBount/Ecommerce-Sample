@@ -1,9 +1,14 @@
-import logo from './logo.svg';
+import { Route, Routes } from "react-router-dom";
 import './App.css';
 import ProductsListPage from './screens/productsListPage';
+import ProductDetailsPage from './screens/productDetailsPage';
+
 function App() {
   return (
-   <ProductsListPage></ProductsListPage>
+   <Routes>
+   <Route exact path="/" element={<ProductsListPage />} />
+   <Route path="/product/:productID" element={<ProductDetailsPage />} />
+ </Routes>
   );
 }
 
